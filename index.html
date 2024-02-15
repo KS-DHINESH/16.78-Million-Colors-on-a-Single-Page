@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Generator</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.5s ease;
+      padding: 20px;
+    }
+    h1{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 0px 10px;
+      color: #eee;
+      text-align: center;
+    }
+    div{
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 30px;
+    }
+  </style>
+</head>
+<body>
+
+    <div>
+      <h1>Experience a Spectrum of 16.78 Million Colors on a Single Page!</h1>
+    </div>
+
+<script>
+  function getRandomColor() {
+    // Generate a random hex color code
+    return '#' + Math.floor(Math.random()*16777215).toString(16);
+  }
+  function changeBackgroundColor() {
+    // Change the background color of the body
+    document.body.style.backgroundColor = getRandomColor();
+    // Repeat the process after a delay (1000ms = 1 second)
+    setTimeout(changeBackgroundColor, 1000);
+  }
+  // Initial call to start the color-changing process
+  changeBackgroundColor();
+</script>
+
+</body>
+</html>
